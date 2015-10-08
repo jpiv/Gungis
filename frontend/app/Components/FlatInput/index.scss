@@ -1,0 +1,10 @@
+.FlatInput {
+	display: inline-block;
+	margin-bottom: 14px;
+	border: none;
+	.FlatInput__Input {
+		border: none;
+		outline: none;
+		padding: 4px;
+	}
+}

@@ -1,4 +1,6 @@
 const React = require('react');
+const classnames = require('classnames');
+require('./index.scss');
 
 class Player extends React.Component {
 	static propTypes = {
@@ -10,21 +12,26 @@ class Player extends React.Component {
 
 	createEmbedLink() {
 		const youtubeAddr = 'http://www.youtube.com/embed/';
-		const videoId = this.props.link.match(/v=.+/)[0].slice(2);
-		return youtubeAddr + videoId;;
+		const videoId = this.props.link.match(/v=.+/) && this.props.link.match(/v=.+/)[0].slice(2);
+		return youtubeAddr + videoId;
 	}
 
 	render() {
 		const { className, width, height} = this.props;
 		const embedLink = this.createEmbedLink();
-		console.log(embedLink);
+		const classes = classnames('Player', className);
+		
+
 		return (
-			<iframe
-				className={ className }
-				width={ width }
-				height={ height }
-				src={ embedLink }
-			/>
+			<div className={ classes }>
+				<iframe
+					className="Player__Iframe"
+					width={ width }
+					height={ height }
+					src={ embedLink }
+					frameborder="0"
+				/>
+			</div>
 		);
 	}
 }

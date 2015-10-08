@@ -1,0 +1,9 @@
+@import "../../Utils/CssUtils/utilClasses.scss";
+
+.Room {
+	@extend .center-align;
+	text-align: center;
+	width: 20%;
+	.Room__Player {
+	}
+}
