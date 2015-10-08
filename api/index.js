@@ -4,8 +4,9 @@ path = require('path');
 var app = express();
 var port = 8000;
 
-app.use(function() {
+app.use(function(req, res, next) {
 	console.log('Request...');
+	next();
 });
 
 app.use(express.static(path.resolve(__dirname, '../frontend')));
