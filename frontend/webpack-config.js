@@ -1,5 +1,5 @@
 module.exports = {
-	entry: ["./app/app.jsx"],
+	entry: ["./app/router.jsx"],
 	output: {
 		filename: "[name].bundle.js",
 		chunkFilename: "[id].bundle.js"
@@ -7,7 +7,7 @@ module.exports = {
 	module: {
 		loaders: [
 			{
-				test: /\.jsx$/,
+				test: /\.(jsx)$/,
 				loader: 'babel?stage=0'
 			},
 			{
@@ -17,6 +17,10 @@ module.exports = {
 			{
 				test: /\.scss$/,
 				loader: 'style!css!sass'
+			},
+			{
+				test: /\.(ttf|eot|svg|woff(2)?)(\?[a-z0-9]+)?$/,
+				loader: 'file-loader'
 			}
 		]
 	}

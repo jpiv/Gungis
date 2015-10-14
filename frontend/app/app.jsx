@@ -1,19 +1,16 @@
-const React = require('react');
-const $ = require('jquery');
-const Room = require('./Views/Room/index.jsx');
-require('./app.scss');
+import React from 'react';
+
+import Header from './Views/Header/index.jsx';
 
 class App extends React.Component {
 	render() {
 		return (
-			<div className='App'>
-				<h1 className="App__Heading">GUNGIS</h1>
-				<Room />
+			<div className="App">
+				<Header />
+				{ this.props.children }
 			</div>
 		);
 	}
 }
 
-$(() => {
-	React.render(<App />, document.body);
-})
+module.exports = App;
